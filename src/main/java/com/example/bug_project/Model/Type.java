@@ -5,8 +5,7 @@ import lombok.*;
 
 import java.util.List;
 
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -16,6 +15,22 @@ public class Type {
     @Column(name = "Type_id")
     private Long id;
     private String name;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     @OneToOne(mappedBy="type")
     private Issue issue;
